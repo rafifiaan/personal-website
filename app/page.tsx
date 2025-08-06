@@ -597,7 +597,7 @@ export default function Portfolio() {
 
                 <div className="w-full h-[70vh] px-6">
                   <iframe
-                    src="https://drive.google.com/file/d/172ycyqW2gvdbCsDaYKwuIf03HVHxRyGq/preview"
+                    src="https://drive.google.com/file/d/1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ/preview"
                     width="100%"
                     height="100%"
                     allow="autoplay"
@@ -607,7 +607,7 @@ export default function Portfolio() {
 
                 <div className="flex justify-end px-6 pb-6 mt-4">
                   <a
-                    href="https://drive.google.com/uc?export=download&id=172ycyqW2gvdbCsDaYKwuIf03HVHxRyGq"
+                    href="https://drive.google.com/uc?export=download&id=1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -1452,7 +1452,7 @@ export default function Portfolio() {
 
                   <div className="w-full h-[70vh] px-6">
                     <iframe
-                      src="https://drive.google.com/file/d/172ycyqW2gvdbCsDaYKwuIf03HVHxRyGq/preview"
+                      src="https://drive.google.com/file/d/1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ/preview"
                       width="100%"
                       height="100%"
                       allow="autoplay"
@@ -1462,7 +1462,7 @@ export default function Portfolio() {
 
                   <div className="flex justify-end px-6 pb-6 mt-4">
                     <a
-                      href="https://drive.google.com/uc?export=download&id=172ycyqW2gvdbCsDaYKwuIf03HVHxRyGq"
+                      href="https://drive.google.com/uc?export=download&id=1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
