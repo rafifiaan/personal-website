@@ -28,7 +28,6 @@ import { useTheme } from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
-import { link } from "fs";
 
 
 export default function Portfolio() {
@@ -397,9 +396,6 @@ export default function Portfolio() {
     : sortedCertifications.slice(0, maxCertsToShow);
 
   const [open, setOpen] = useState(false);
-  const [zoom, setZoom] = useState(1);
-  const handleZoomIn = () => setZoom((z) => Math.min(z + 0.1, 2));
-  const handleZoomOut = () => setZoom((z) => Math.max(z - 0.1, 0.5));
 
   if (!mounted) {
     return null
