@@ -23,11 +23,15 @@ import {
   Award,
   BookOpen,
   LinkIcon,
+  Menu,
+  LayoutGrid,
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import './globals.css';
 
 
 export default function Portfolio() {
@@ -38,6 +42,7 @@ export default function Portfolio() {
     setMounted(true)
   }, [])
 
+  
   const techStack = [
     { name: "Node.js", category: "Backend" },
     { name: "Express.js", category: "Backend" },
@@ -137,7 +142,7 @@ export default function Portfolio() {
       certificateLink: "#",
     },
   ]
-
+  
   const certificationsData = [
     {
       name: "Intro to Data Analytics",
@@ -153,7 +158,7 @@ export default function Portfolio() {
       issuer: "Google",
       year: "May 2024",
       description:
-        "Learn to design, deploy, and manage cloud-native applications using Google Cloud Run through hands-on labs and practical exercises.",
+      "Learn to design, deploy, and manage cloud-native applications using Google Cloud Run through hands-on labs and practical exercises.",
       credentialId: "9106793", 
       skillsValidated: ["Cloud Run Deployment", "Containerized Applications", "Cloud Application Management", "Google Cloud Services Integration"],
       certificateLink: "https://www.cloudskillsboost.google/public_profiles/cd81d594-4943-4637-9ff8-bbb6ac17a0a6/badges/9106793?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share", 
@@ -258,7 +263,7 @@ export default function Portfolio() {
       certificateLink: "https://www.cloudskillsboost.google/public_profiles/cd81d594-4943-4637-9ff8-bbb6ac17a0a6/badges/8266084?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share",
     },
   ]
-
+  
   const skillsData = {
     backend: [
       "Node.js",
@@ -282,7 +287,7 @@ export default function Portfolio() {
     ],
     tools: ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Trello", "Tableau", "Power BI", "DBeaver"],
   }
-
+  
   const projects = [
     {
       title: "DroneMEQ: Drone for Marine Environmental Quality",
@@ -321,22 +326,22 @@ export default function Portfolio() {
       link: "https://github.com/rafifiaan/sales-insight-minicourses-DA",
     },
   ]
-
+  
   interface BlogPost {
     title: string;
     date: string;
     description: string;
     link: string;
   }
-
+  
   // Contoh isian data blog posts
   /*
-      {
+  {
       title: "Optimizing PostgreSQL Queries for Large Datasets",
       date: "July 25, 2024",
       description: "Tips and tricks to improve performance of complex SQL queries in PostgreSQL.",
       link: "#", // Ganti dengan link blog post asli
-    },
+      },
   */
   const blogPosts: BlogPost[] = [ ];
 
@@ -365,12 +370,12 @@ export default function Portfolio() {
       "Built responsive React applications with TypeScript, improving user engagement by 40%",
       "Mentored 3 junior developers and established code review best practices",
       "Optimized database queries reducing API response time by 60%"
-    ],
-    tech: ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS"]
-  },
-  */
-
-  const experiences: Experience[] = [ ];
+      ],
+      tech: ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "AWS"]
+      },
+      */
+     
+     const experiences: Experience[] = [ ];
 
   const [showAllProjects, setShowAllProjects] = useState(false)
   const maxProjectsToShow = 6
@@ -386,54 +391,197 @@ export default function Portfolio() {
     }
     return new Date(`Jan 1, ${str}`);
   };
-
+  
   const sortedCertifications = [...certificationsData].sort(
     (a, b) => parseYear(b.year).getTime() - parseYear(a.year).getTime()
   );
-
+  
   const displayedCertifications = showAllCertifications
-    ? sortedCertifications
-    : sortedCertifications.slice(0, maxCertsToShow);
-
+  ? sortedCertifications
+  : sortedCertifications.slice(0, maxCertsToShow);
+  
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault(); // tetap mencegah default
+    setOpen(false);
+    requestAnimationFrame(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  };
   const [open, setOpen] = useState(false);
-
+  
   if (!mounted) {
     return null
   }
-
+  
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur-md">
+      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-6xl mx-auto flex h-16 items-center justify-between px-6">
           <div className="flex items-center space-x-2">
             <Link href="/" className="flex items-center space-x-2">
               <img src="/logo.png" alt="Logo" className="h-12 w-12" />
               <div className="font-bold text-xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                rafifiaan.dev
+                rafifiaan.me
               </div>
             </Link>
           </div>
+          {/* Mobile Menu */}
+          <div className="md:hidden">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-5 w-5" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent className="w-[300px] sm:w-[400px] rounded-l-xl [&>button]:top-6 [&>button]:right-6 [&>button]:h-8 [&>button]:w-8 [&>button]:text-lg" aria-label="Main Menu">
+                <SheetHeader className="flex flex-row items-center justify-between border-b pb-4 mb-4">
+                  <div className="flex items-center space-x-2">
+                    <LayoutGrid className="h-6 w-6 text-muted-foreground" />
+                    <SheetTitle className="font-bold text-lg text-black dark:text-white">
+                      Main Menu
+                    </SheetTitle>
+                  </div>
+                </SheetHeader>
+
+                <nav className="flex flex-col space-y-2">
+                  {/* Navigation Links dengan Card Style */}
+                  <Link 
+                    href="#work" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                    onClick={(e) => handleNavClick(e, '#work')}
+                  >
+                    <Briefcase className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">Work</span>
+                  </Link>
+
+                  <Link 
+                    href="#about" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                      onClick={(e) => handleNavClick(e, '#about')}
+                  >
+                    <BookOpen className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">About</span>
+                  </Link>
+
+                  <Link 
+                    href="#experience" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                    onClick={(e) => handleNavClick(e, '#experience')}
+                  >
+                    <GraduationCap className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">Experience</span>
+                  </Link>
+
+                  <Link 
+                    href="#certifications" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                    onClick={(e) => handleNavClick(e, '#certifications')}
+                  >
+                    <Award className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">Certifications</span>
+                  </Link>
+
+                  <Link 
+                    href="#skills" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                    onClick={(e) => handleNavClick(e, '#skills')}
+                  >
+                    <Rocket className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">Skills</span>
+                  </Link>
+
+                  <Link 
+                    href="#contact" 
+                    className="group flex items-center space-x-3 p-3 rounded-lg hover:bg-accent transition-colors"
+                    onClick={(e) => handleNavClick(e, '#contact')}
+                  >
+                    <Mail className="h-4 w-4 text-muted-foreground group-hover:text-primary" />
+                    <span className="font-medium group-hover:text-primary">Contact</span>
+                  </Link>
+
+                  {/* Divider */}
+                  <div className="border-t my-4"></div>
+                  
+                  {/* Action Buttons - tidak full width */}
+                  <div className="space-y-3 px-2">
+                    {/* Resume Button */}
+                    <Button
+                      onClick={() => setOpen(true)}
+                      className="w-full max-w justify-center space-x-2"
+                      variant="default"
+                    >
+                      <Download className="h-4 w-4" />
+                      <span>Resume</span>
+                    </Button>
+                    
+                    {/* Theme Toggle Button */}
+                   <Button
+                      variant="outline"
+                      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+                      className="w-full max-w justify-center space-x-2"
+                    >
+                      {theme === "light" ? (
+                        <Moon className="h-4 w-4" />
+                      ) : (
+                        <Sun className="h-4 w-4" />
+                      )}
+                      <span>{theme === "light" ? "Dark" : "Light"} Mode</span>
+                    </Button>
+                  </div>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link href="#work" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#work" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#work')}
+            >
               Work
             </Link>
-            <Link href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#about" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#about')}
+            >
               About
             </Link>
-            <Link href="#experience" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#experience" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#experience')}
+            >
               Experience
             </Link>
-            <Link href="#certifications" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#certifications" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#certifications')}
+            >
               Certifications
             </Link>
-            <Link href="#skills" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#skills" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#skills')}
+            >
               Skills
             </Link>
-            {/* Removed Blog link */}
-            <Link href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link 
+              href="#contact" 
+              className="text-sm font-medium hover:text-primary transition-colors"
+              onClick={(e) => handleNavClick(e, '#contact')}
+            >
               Contact
             </Link>
+            
+            {/* Resume Dialog */}
             <Dialog open={open} onOpenChange={setOpen}>
               <DialogTrigger asChild>
                 <Button variant="outline" size="sm" className="ml-4 bg-transparent">
@@ -471,9 +619,16 @@ export default function Portfolio() {
                 </div>
               </DialogContent>
             </Dialog>
-            <Button variant="ghost" size="icon" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+            
+            {/* Theme Toggle Button */}
+            <Button 
+              variant="ghost" 
+              size="icon" 
+              onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            >
               <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+              <span className="sr-only">Toggle theme</span>
             </Button>
           </nav>
         </div>
@@ -754,7 +909,7 @@ export default function Portfolio() {
                 </Card>
                 <Card className="p-6 text-center">
                   <div className="text-2xl font-bold text-primary">25+</div>
-                  <div className="text-sm text-muted-foreground">Technologies and Tools</div>
+                  <div className="text-sm text-muted-foreground">Tech & Tools</div>
                 </Card>
               </div>
             </div>
@@ -1331,7 +1486,7 @@ export default function Portfolio() {
             <Link href="/" className="flex items-center space-x-2">
               <img src="/logo.png" alt="Logo" className="h-12 w-12" />
               <div className="font-bold text-xl bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-                rafifiaan.dev
+                rafifiaan.me
               </div>
             </Link>
             <p className="text-sm text-muted-foreground">
