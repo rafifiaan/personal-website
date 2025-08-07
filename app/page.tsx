@@ -25,6 +25,9 @@ import {
   LinkIcon,
   Menu,
   LayoutGrid,
+  Server, 
+  ActivitySquare,
+  BarChart2, 
 } from "lucide-react"
 import { useTheme } from "next-themes"
 import Image from "next/image"
@@ -633,29 +636,29 @@ export default function Portfolio() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-9 lg:py-9">
+      <section className="py-9 lg:py-7">
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column */}
-            <div className="space-y-8">
-              <div className="space-y-6">
+            <div className="space-y-7">
+              <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   <span>Available for New Opportunities</span>
                 </div>
 
-                <h1 className="text-4xl lg:text-5xl font-bold leading-tight">
+                <h1 className="text-3xl lg:text-5xl font-bold leading-tight">
                   Hi, I'm <span className="text-primary">Rafi&nbsp;Aliefian</span>
                   <br />
                   <span className="text-primary">Putra Ramadhani</span>
                   <br />
-                  <span className="text-muted-foreground text-3xl lg:text-5xl">
-                    Data Enthusiast & Backend Developer
+                  <span className="text-muted-foreground text-2xl lg:text-3xl">
+                    Backend Developer | IT Business Analyst | Data-Driven Insights
                   </span>
                 </h1>
 
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                  I started in <strong>Backend Development</strong>—building systems and APIs. Lately, I’ve grown passionate about <strong>Data Analytics</strong>, especially in <strong>Analyst</strong> and <strong>Scientist roles</strong>, where I aim to turn data into <strong>Impactful Insights</strong> and <strong>Real-World Solutions</strong>.
+                <p className="text-lg text-muted-foreground leading-relaxed max-w-lg text-justify">
+                  I started in <strong>Backend Development</strong>—building systems and APIs that solve real problems. Over time, I developed a strong interest in <strong>System Analysis</strong> and <strong>IT Business</strong>, where I could better understand the needs behind a system and align technical solutions with business objectives. This strategic perspective eventually led me to explore <strong>Data Analytics</strong>, where I focus on uncovering <strong>Impactful Insights</strong> that support decision-making and drive <strong>Real-World Solutions</strong>.
                 </p>
 
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -667,7 +670,7 @@ export default function Portfolio() {
               </div>
 
               {/* Tech Stack */}
-              <div className="space-y-4">
+              <div className="space-y-2">
                 <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
                   Current Tech Stack
                 </h3>
@@ -697,7 +700,7 @@ export default function Portfolio() {
               </div>
 
               {/* Social Links */}
-              <div className="flex items-center space-x-4 pt-4">
+              <div className="flex items-center space-x-4">
                 <Button variant="ghost" size="icon" className="hover:text-primary" asChild>
                   <a
                     href="https://github.com/rafifiaan"
@@ -880,23 +883,27 @@ export default function Portfolio() {
                 <h2 className="text-3xl lg:text-4xl font-bold">About Me</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                   <p>
-                    I'm a final-year Informatics Engineering student at Institut Teknologi Sepuluh Nopember (ITS) Surabaya with a strong background in software engineering—especially backend development.
+                    I'm a Fresh Graduate of Informatics from Institut Teknologi Sepuluh Nopember (ITS) Surabaya with a strong background in software engineering—especially backend development.
                   </p>
                   <p>
                     Over the past few years, I’ve worked on building scalable and reliable systems using technologies like Golang, Node.js, and Google Cloud Platform. My experience includes designing APIs, managing backend logic, and integrating data from IoT devices into real-world applications.
                   </p>
                   <p>
+                    In addition to my technical work, I’ve developed strong capabilities in system analysis and IT business—bridging the gap between business needs and technical execution. I enjoy translating complex requirements into structured system designs that align with organizational goals and deliver real value.
+                  </p>
+                  <p>
                    Recently, I’ve developed a growing interest in data analytics and data-driven decision-making. To support this shift, I’ve been learning Python, SQL, R, Tableau, Power BI, and machine learning fundamentals. I'm particularly drawn to extracting insights from data to drive meaningful impact.
                   </p>
                   <p>
-                    I bring a strong technical foundation, a sharp analytical mindset, and a continuous learning attitude. I'm currently exploring opportunities in both backend and data-related roles, and I’m excited to contribute to impactful, real-world solutions.
+                    I bring a strong technical foundation, a sharp analytical mindset, and a continuous learning attitude. I'm currently exploring opportunities in backend, system analysis, and data-related roles, and I’m excited to contribute to impactful, real-world solutions.
                   </p>
                 </div>
               </div>
 
+            {/* Right: Metric Cards + Core Competencies */}
+            <div className="space-y-6">
+              {/* Metric Cards */}
               <div className="grid grid-cols-3 gap-4">
-                {" "}
-                {/* Changed to grid-cols-3 */}
                 <Card className="p-6 text-center">
                   <div className="text-2xl font-bold text-primary">3</div>
                   <div className="text-sm text-muted-foreground">Projects Completed</div>
@@ -910,7 +917,47 @@ export default function Portfolio() {
                   <div className="text-sm text-muted-foreground">Tech & Tools</div>
                 </Card>
               </div>
+
+              <Card className="p-6 space-y-4">
+                <h4 className="text-lg font-semibold tracking-tight border-b pb-2">
+                  Core Competencies & Focus
+                </h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x">
+                  {[
+                    {
+                      icon: <Server className="w-5 h-5 text-primary mt-1" />,
+                      title: 'Backend Development',
+                      desc: 'Scalable APIs, databases, and service architecture.',
+                    },
+                    {
+                      icon: <Briefcase className="w-5 h-5 text-primary mt-1" />,
+                      title: 'IT & Business Insight',
+                      desc: 'Bridging business needs with tech-driven solutions.',
+                    },
+                    {
+                      icon: <ActivitySquare className="w-5 h-5 text-primary mt-1" />,
+                      title: 'System Analysis',
+                      desc: 'Functional mapping, specs design, and process modeling.',
+                    },
+                    {
+                      icon: <BarChart2 className="w-5 h-5 text-primary mt-1" />,
+                      title: 'Data Analytics',
+                      desc: 'Python, SQL, dashboards, and insight-driven decisions.',
+                    },
+                  ].map(({ icon, title, desc }, i) => (
+                    <div key={i} className="flex items-start gap-3 p-4">
+                      {icon}
+                      <div>
+                        <p className="font-medium">{title}</p>
+                        <p className="text-sm text-muted-foreground">{desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </Card>
+
             </div>
+          </div>
 
             {/* Education Section */}
             <div className="space-y-8">
