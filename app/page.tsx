@@ -51,8 +51,6 @@ export default function Portfolio() {
     { name: "Golang", category: "Backend" },
     { name: "PostgreSQL", category: "Database" },
     { name: "MongoDB", category: "Database" },
-    { name: "Tableau", category: "Tools" },
-    { name: "Power BI", category: "Tools" },
   ]
 
   const educationData = [
@@ -285,7 +283,7 @@ export default function Portfolio() {
       "Database Design",
       "Big Data",
     ],
-    tools: ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Trello", "Tableau", "Power BI", "DBeaver"],
+    tools: ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Trello", "DBeaver", "Draw.io"],
   }
   
   const projects = [
