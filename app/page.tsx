@@ -47,13 +47,17 @@ export default function Portfolio() {
 
   
   const techStack = [
+    { name: "Draw.io", category: "Design" },
+    { name: "Visual Paradigm", category: "Design" },
+    { name: "Dbdiagram", category: "Design" },
+    { name: "Excel", category: "Design" },
+    { name: "PostgreSQL", category: "Database" },
+    { name: "MongoDB", category: "Database" },
     { name: "Node.js", category: "Backend" },
     { name: "Express.js", category: "Backend" },
     { name: "JavaScript", category: "Backend" },
     { name: "Python", category: "Backend" },
     { name: "Golang", category: "Backend" },
-    { name: "PostgreSQL", category: "Database" },
-    { name: "MongoDB", category: "Database" },
   ]
 
   const educationData = [
@@ -63,7 +67,7 @@ export default function Portfolio() {
       location: "Surabaya, Indonesia",
       years: "2021 - 2025",
       gpa: "3.62/4.00",
-      coursework: "Database Management, Web Programming, Knowledge-Based System Engineering, Machine Learning, Information System Analysis and Design",
+      coursework: " Information System Analysis and Design, Database Management, Web Programming, Knowledge-Based System Engineering, Machine Learning",
       project: "Backend System Design Using Microservices Architecture To Measure Water Quality From Drone Data",
     },
   ]
@@ -81,7 +85,7 @@ export default function Portfolio() {
       keyAchievements: [
         "Completed 900+ hours of Cloud Computing training (technical, soft skills, English).",
         "Earned 6+ Google Cloud badges and backend certifications via Dicoding.",
-        "Certified in Web Programming, JavaScript, and Backend with Google Cloud.",
+        "Contributed as System Analyst, Backend & Cloud Engineer: gathered requirements, designed UML/ERD, built and deployed backend services on Google Cloud, integrated APIs, and ensured scalability and reliability.",
         "Built a smart skin disease detection app in a cross-functional capstone team.",
         "Best Presenter in capstone peer review (Individual – 1 per team).",
       ],
@@ -91,7 +95,7 @@ export default function Portfolio() {
       certificateLink: "https://drive.google.com/file/d/1AjsmkEbi8jkgsETTl3_daPMewNy4pCYG/view?usp=sharing", // Ganti dengan link sertifikat asli
     },
     {
-      title: "Backend Developer Internship",
+      title: "System Analyst & Backend Developer Internship",
       provider: "PT. Telkom Indonesia",
       type: "Internship",
       years: "Sep 2024 - Nov 2024",
@@ -99,9 +103,9 @@ export default function Portfolio() {
       project: "DOME: Web-based Outsourcing Data Management platform",
       projectLink: "https://dome-zeta.vercel.app/", 
       keyAchievements: [
-        "Built and deployed RESTful APIs using Express.js and Bun.js.",
-        "Designed relational database schema on Supabase for efficient data access.",
-        "Collaborated with frontend team to ensure smooth data flow and integration.",
+        "Analyzed outsourcing workflows, created ERD, and designed relational schema on Supabase for efficient data integration and storage.",
+        "Developed and tested RESTful APIs with Express.js & Bun.js, then deployed and monitored backend services for reliable operations.",
+        "Coordinated with cross-functional teams in Agile meetings, assisting in validation, testing, and enhancement of outsourcing workflows.",
       ],
       githubLink: "https://github.com/rafifiaan/dome-be", 
       hasGithubLink: true,
@@ -109,7 +113,7 @@ export default function Portfolio() {
       certificateLink: "https://drive.google.com/file/d/1VJhNImd4vmocmXO-9UDhbvUYdunK3VhH/view?usp=sharing",
     },
     {
-      title: "Backend Developer",
+      title: "System Analyst & Backend Support",
       provider: "Direktorat Pengembangan Teknologi dan Sistem Informasi ITS",
       type: "Contracted Project",
       years: "Jan 2025 - Apr 2025",
@@ -117,15 +121,15 @@ export default function Portfolio() {
       project: "MyITS Puspresnas – Internal PKM Management Platform at ITS",
       projectLink: "https://puspresnas.its.ac.id",
       keyAchievements: [
-        "Resolved 20+ backend bugs and optimized SQL queries for faster data access.",
-        "Developed export features (PDF & Excel) used by 100+ academic staff.",
-        "Supported efficient PKM coordination by enabling team management and supervisor matching for 200+ teams.",
+        "Resolved 20+ system issues and delivered 3+ features, including reporting module (100+ staff), supervisor assignment workflow (200+ teams), and real-time data management.",
+        "Optimized queries, mapped data flows, and improved GraphQL services in Golang with SQL Server for better performance.",
+        "Collaborated with stakeholders in Agile meetings, monitored system health, and maintained accurate documentation.",
       ],
       hasCertificate: false, 
       certificateLink: null,
     },
     {
-      title: "Backend Developer",
+      title: "System Analyst & Backend Developer",
       provider: "Information Intelligent Management Laboratory",
       type: "Contracted Project",
       years: "Sep 2024 - Aug 2025",
@@ -133,9 +137,9 @@ export default function Portfolio() {
       project: "DroneMEQ: Drone for Marine Environmental Quality",
       projectLink: "https://dronemeq.erplabiim.com/",
       keyAchievements: [
-        "Developed 5 microservices using Golang (Gin) and 1 using Python (FastAPI) to support modular backend architecture.",
-        "Implemented batch sensor data ingestion and aerial media upload features for marine monitoring.",
-        "Integrated backend with Android and web clients, ensuring reliable cross-platform access and synchronization.",
+        "System Analysis: Designed ERD, UML, workflows, and documentation; ensured clarity and on-time delivery with Agile Kanban.",
+        "Backend Development: Built database schema (Gorm) and 6 services in Golang (Gin) for data ingestion, monitoring, and media uploads.",
+        "Deployment: Containerized with Docker and automated CI/CD pipelines using Jenkins.",
       ],
       githubLink: "https://github.com/rafifiaan/dome-be", 
       hasGithubLink: false,
@@ -266,6 +270,20 @@ export default function Portfolio() {
   ]
   
   const skillsData = {
+    system_analyst: [
+      "Entity Relationship Diagram (ERD)",
+      "Unified Modeling Language (UML)",
+      "Flowchart",
+      "Draw.io",
+      "Eraser",
+      "Visual Paradigm",
+      "Dbdiagram",
+      "Vertabelo",
+      "Whimsical",
+      "Trello",
+      "Notion",
+      "Figma"
+    ],
     backend: [
       "Node.js",
       "Express.js",
@@ -277,16 +295,17 @@ export default function Portfolio() {
       "REST APIs",
     ],
     data: [
+      "Excel",
       "SQL (PostgreSQL)",
       "NoSQL (MongoDB)",
-      "Data Analysis",
+      "Exploratory Data Analysis (EDA)",
       "Data Visualization",
       "Machine Learning",
       "Data Modeling",
       "Database Design",
       "Big Data",
     ],
-    tools: ["Git", "Docker", "Jenkins", "Postman", "VS Code", "Trello", "DBeaver", "Draw.io"],
+    tools: ["Git", "Docker", "Jenkins", "Postman", "VS Code", "DBeaver"],
   }
   
   const projects = [
@@ -598,7 +617,7 @@ export default function Portfolio() {
 
                 <div className="w-full h-[70vh] px-6">
                   <iframe
-                    src="https://drive.google.com/file/d/1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ/preview"
+                    src="https://drive.google.com/file/d/1el8s-rXrJFkpqQpCcjPB5vFMaVN0FinX/preview"
                     width="100%"
                     height="100%"
                     allow="autoplay"
@@ -608,7 +627,7 @@ export default function Portfolio() {
 
                 <div className="flex justify-end px-6 pb-6 mt-4">
                   <a
-                    href="https://drive.google.com/uc?export=download&id=1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ"
+                    href="https://drive.google.com/uc?export=download&id=1el8s-rXrJFkpqQpCcjPB5vFMaVN0FinX"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -640,7 +659,7 @@ export default function Portfolio() {
         <div className="container max-w-6xl mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column */}
-            <div className="space-y-7">
+            <div className="space-y-5">
               <div className="space-y-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
@@ -653,12 +672,12 @@ export default function Portfolio() {
                   <span className="text-primary">Putra Ramadhani</span>
                   <br />
                   <span className="text-muted-foreground text-2xl lg:text-3xl">
-                    Backend Developer | IT Business Analyst | Data-Driven Insights
+                    System Analyst | Backend | Data
                   </span>
                 </h1>
 
                 <p className="text-lg text-muted-foreground leading-relaxed max-w-lg text-justify">
-                  I started in <strong>Backend Development</strong>—building systems and APIs that solve real problems. Over time, I developed a strong interest in <strong>System Analysis</strong> and <strong>IT Business</strong>, where I could better understand the needs behind a system and align technical solutions with business objectives. This strategic perspective eventually led me to explore <strong>Data Analytics</strong>, where I focus on uncovering <strong>Impactful Insights</strong> that support decision-making and drive <strong>Real-World Solutions</strong>.
+                  I started my career in <strong>Systems Analyst</strong>—focusing on analyzing requirements, designing system models, and aligning technical solutions with business objectives. Along the way, I gained hands-on experience in <strong>Backend Development</strong>, building systems and APIs to solve real-world problems. This perspective eventually led me to complement my skills by exploring <strong>Data Analytics</strong>, leveraging insights to support decision-making and drive <strong>impactful solutions</strong>. I am well-versed in the <strong>Software Development Life Cycle (SDLC)</strong> and accustomed to working in <strong>Agile environments</strong>, ensuring effective collaboration and continuous delivery of value.
                 </p>
 
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
@@ -672,7 +691,7 @@ export default function Portfolio() {
               {/* Tech Stack */}
               <div className="space-y-2">
                 <h3 className="text-sm font-semibold text-muted-foreground uppercase tracking-wider">
-                  Current Tech Stack
+                  Current Stack
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {techStack.map((tech, index) => (
@@ -883,19 +902,16 @@ export default function Portfolio() {
                 <h2 className="text-3xl lg:text-4xl font-bold">About Me</h2>
                 <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
                   <p>
-                    I'm a Fresh Graduate of Informatics from Institut Teknologi Sepuluh Nopember (ITS) Surabaya with a strong background in software engineering—especially backend development.
+                  I'm a Fresh Graduate in Informatics from Institut Teknologi Sepuluh Nopember (ITS) Surabaya, with strong expertise in System Analysis and Backend Development. I have experience designing system models (ERD, UML, Flowcharts), developing APIs, managing databases, and integrating cloud solutions to build scalable and reliable web, mobile, and IoT applications.
                   </p>
                   <p>
-                    Over the past few years, I’ve worked on building scalable and reliable systems using technologies like Golang, Node.js, and Google Cloud Platform. My experience includes designing APIs, managing backend logic, and integrating data from IoT devices into real-world applications.
+                  Over the past few years, I have honed my skills in Golang, Node.js, and Google Cloud Platform, working in SDLC and Agile environments to translate complex business requirements into effective and impactful IT solutions.
                   </p>
                   <p>
-                    In addition to my technical work, I’ve developed strong capabilities in system analysis and IT business—bridging the gap between business needs and technical execution. I enjoy translating complex requirements into structured system designs that align with organizational goals and deliver real value.
+                  Alongside my technical work, I have cultivated a growing interest in data analytics and data-driven decision-making. I have been learning Python, SQL, R, Tableau, Power BI, and machine learning fundamentals, focusing on extracting actionable insights to drive meaningful impact.
                   </p>
                   <p>
-                   Recently, I’ve developed a growing interest in data analytics and data-driven decision-making. To support this shift, I’ve been learning Python, SQL, R, Tableau, Power BI, and machine learning fundamentals. I'm particularly drawn to extracting insights from data to drive meaningful impact.
-                  </p>
-                  <p>
-                    I bring a strong technical foundation, a sharp analytical mindset, and a continuous learning attitude. I'm currently exploring opportunities in backend, system analysis, and data-related roles, and I’m excited to contribute to impactful, real-world solutions.
+                    I bring a strong technical foundation, a sharp analytical mindset, and a continuous learning attitude. I'm currently exploring opportunities in System Analyst, Backend, and Data-related roles, and I’m excited to contribute to impactful, real-world solutions.
                   </p>
                 </div>
               </div>
@@ -925,19 +941,19 @@ export default function Portfolio() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x">
                   {[
                     {
+                      icon: <ActivitySquare className="w-5 h-5 text-primary mt-1" />,
+                      title: 'System Analyst',
+                      desc: 'Functional mapping, Specs design, and Process modeling.',
+                    },
+                    {
                       icon: <Server className="w-5 h-5 text-primary mt-1" />,
                       title: 'Backend Development',
-                      desc: 'Scalable APIs, databases, and service architecture.',
+                      desc: 'Scalable APIs, Databases, and Service architecture.',
                     },
                     {
                       icon: <Briefcase className="w-5 h-5 text-primary mt-1" />,
                       title: 'IT & Business Insight',
                       desc: 'Bridging business needs with tech-driven solutions.',
-                    },
-                    {
-                      icon: <ActivitySquare className="w-5 h-5 text-primary mt-1" />,
-                      title: 'System Analysis',
-                      desc: 'Functional mapping, specs design, and process modeling.',
                     },
                     {
                       icon: <BarChart2 className="w-5 h-5 text-primary mt-1" />,
@@ -1294,11 +1310,32 @@ export default function Portfolio() {
             <div className="text-center space-y-4">
               <h2 className="text-3xl lg:text-4xl font-bold">Skill Set</h2>
               <p className="text-muted-foreground max-w-2xl mx-auto">
-                Technologies and tools I use to build robust, scalable, and data-driven solutions.
+                Skills, Knowledge, and Tools I apply to build robust, scalable, and data-driven solutions.
               </p>
             </div>
 
             <div className="space-y-12">
+              {/* System Analyst */}
+              <div className="space-y-6">
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
+                    <span className="text-lg">📊</span>
+                  </div>
+                  <h3 className="text-xl font-semibold">System Analyst</h3>
+                </div>
+                <div className="flex flex-wrap gap-3">
+                  {skillsData.system_analyst.map((skill, index) => (
+                    <Badge
+                      key={index}
+                      variant="secondary"
+                      className="px-4 py-2 text-sm font-medium hover:bg-blue-100 hover:text-blue-800 dark:hover:bg-blue-900 dark:hover:text-blue-200 transition-colors"
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+
               {/* Backend Development */}
               <div className="space-y-6">
                 <div className="flex items-center space-x-3">
@@ -1326,7 +1363,7 @@ export default function Portfolio() {
                   <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
                     <span className="text-lg">📊</span>
                   </div>
-                  <h3 className="text-xl font-semibold">Data & Analytics</h3>
+                  <h3 className="text-xl font-semibold">Data Analytics</h3>
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {skillsData.data.map((skill, index) => (
@@ -1364,13 +1401,17 @@ export default function Portfolio() {
             </div>
 
             {/* Skills Summary */}
-            <div className="grid md:grid-cols-2 gap-8 pt-8 border-t">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pt-8 border-t">
+              <div className="text-center space-y-2">
+                <div className="text-2xl font-bold text-primary">System Analyst</div>
+                <div className="text-sm text-muted-foreground">System modeling and requirement analysis</div>
+              </div>
               <div className="text-center space-y-2">
                 <div className="text-2xl font-bold text-primary">Backend</div>
                 <div className="text-sm text-muted-foreground">Server-side development and API design</div>
               </div>
               <div className="text-center space-y-2">
-                <div className="text-2xl font-bold text-primary">Data</div>
+                <div className="text-2xl font-bold text-primary">Data Analytics</div>
                 <div className="text-sm text-muted-foreground">Database design and data processing</div>
               </div>
             </div>
@@ -1497,7 +1538,7 @@ export default function Portfolio() {
 
                   <div className="w-full h-[70vh] px-6">
                     <iframe
-                      src="https://drive.google.com/file/d/1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ/preview"
+                      src="https://drive.google.com/file/d/1el8s-rXrJFkpqQpCcjPB5vFMaVN0FinX/preview"
                       width="100%"
                       height="100%"
                       allow="autoplay"
@@ -1507,7 +1548,7 @@ export default function Portfolio() {
 
                   <div className="flex justify-end px-6 pb-6 mt-4">
                     <a
-                      href="https://drive.google.com/uc?export=download&id=1hIhApWgHaz158SvoPhZ4qzEA9X3zH1EQ"
+                      href="https://drive.google.com/uc?export=download&id=1el8s-rXrJFkpqQpCcjPB5vFMaVN0FinX"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
